@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Figma Plugin with Tabs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!--FEEDBACK-->
+    <div class="feedback">
+        <a target="_blank" href="https://forms.gle/Bmchu1G4oCtsyhkR9"><p><span class="blue-link-color">Feedback or Requests?</span> -> Let us know</p></a>
+    </div>
+
+    <!--NAVBAR-->
+    <nav class="navbar">
+        <div class="nav-tab active" id="scan-tab">Scan</div>
+        <div class="nav-tab" id="export-css-tab">Export CSS</div>
+        <div class="nav-tab" id="suggestions-tab">Suggestions</div>
+    </nav>
+
+    <!--SCAN CONTENT-->
+    <div id="scan-content" class="content">
+        <div class="main-content">
+            <!--Pointer Vector Image?-->
+            <p class="main-page-big">Welcome to DESY!</p>
+            <p class="main-page-small">Press "Scan File" to get started.</p>
+            <p class="styles-detected-msg" id="styles-detected-msg"><!--placeholder--></p>
+
+
+
+
+
+
+            <!--Back Button for FRAMES-->
+            <button class="back-button">
+                <svg class="backBtn-svg" xmlns="http://www.w3.org/2000/svg"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path></svg>
+                <p id="back">Back</p>
+            </button>
+
+
+            <!--FRAMES FIRST BEFORE ELEMENTS-->
+            <div id="frame-list-content">
+                <p id="frames-msg"><!--placeholder--></p>
+                <div class="scrollable-container">
+                    <ul class="frame-list">
+                        <!-- Frame items will be added here dynamically -->
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="scrollable-container">
+                <ul class="element-list">
+                    <!-- <li class="element">
+                        <div class="element-name">Element 1</div>
+                        <div class="suggested-text-style">Suggested Text Style</div>
+                        <div class="suggested-paint-style">Suggested Paint Style</div>
+                        <button class="zoom-button">Zoom</button>
+                    </li> -->
+                    <!-- Add more elements here -->
+                </ul>
+            </div>
+            <button class="scan-btn runTestButton" id="runTestButton">Scan File</button>
+        </div>
+    </div>
+
+    <!--EXPORT CSS CONTENT-->
+    <div id="export-css-content" class="content">
+        <div id="export-css" class="tabcontent">
+            <div id="copy-css-container">
+                <button id="copy-css-button">Copy code<svg id="copy-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M20 2H10c-1.103 0-2 .897-2 2v4H4c-1.103 0-2 .897-2 2v10c0 1.103.897 2 2 2h10c1.103 0 2-.897 2-2v-4h4c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zM4 20V10h10l.002 10H4zm16-6h-4v-4c0-1.103-.897-2-2-2h-4V4h10v10z"></path></svg></button>
+            </div>
+            <textarea id="css-textbox" readonly></textarea>
+            <button class="scan-btn" id="get-css-button">Get CSS</button>
+        </div>
+    </div>
+
+    <!--SUGGESTIONS CONTENT-->
+    <div id="suggestions-content" class="content">
+        <div class="main-content">
+            <p class="main-page-big">Welcome to DESY!</p>
+            <p class="main-page-small">Press "Scan File" to get started.</p>
+
+            <p class="styles-detected-msg" id="suggestions-detected-msg"><!--placeholder--></p>
+            <div class="scrollable-container">
+                <ul class="suggestions-list">
+                    <!-- <li class="element">
+                        <div class="element-name">Element 1</div>
+                        <div class="suggested-text-style">Suggested Text Style</div>
+                        <div class="suggested-paint-style">Suggested Paint Style</div>
+                        <button class="zoom-button">Zoom</button>
+                    </li> -->
+                    <!-- Add more elements here -->
+                </ul>
+            </div>
+            <button class="scan-btn runTestButton" id="runTestButton">Scan File</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

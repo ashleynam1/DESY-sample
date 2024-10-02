@@ -1,0 +1,364 @@
+body {
+    font-family: 'Inter', sans-serif;
+    padding: 0px;
+    margin: 0px;
+}
+
+/*----------FEEDBACK BAR----------*/
+.feedback {
+    height: 35px;
+    background-color: #EAF2FE;
+    font-weight: 550;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    border-radius: 0px 0px 8px 8px;
+    padding: 4px 10px;
+}
+
+.blue-link-color {
+    font-weight: 300;
+    color: #2462C6;
+
+}
+
+.feedback a {
+    text-decoration: none;
+    color: black;
+    margin-left: 12px;
+}
+
+.feedback .blue-link-color:hover {
+    text-decoration: underline;
+}
+
+/*----------NAVBAR----------*/
+.navbar {
+    display: flex;
+}
+
+.nav-tab {
+    flex: 1;
+    color: #333; /* Text color */
+    padding: 10px 0;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px; /* Smaller font size */
+    position: relative;
+    font-weight: 400; /* Regular font weight */
+    transition: color 0.3s; /* Smooth text color transition */
+}
+
+.nav-tab.active {
+    font-weight: 700; /* Bold font weight for active tab */
+    color: #1366E2; /* Active tab text color */
+}
+
+.nav-tab::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #1366E2; /* Color of the underline */
+    transition: width 0.3s, left 0.3s; /* Transition for underline */
+}
+
+.nav-tab.active::after {
+    width: 100%;
+    left: 0;
+}
+
+.content {
+    display: none;
+    padding: 20px;
+}
+
+.active {
+    display: block;
+}
+
+/*----------SCAN CONTENT----------*/
+.main-content {
+    text-align: center;
+}
+
+.main-page-big {
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 195px;
+    color: rgba(0,0,0,.8);
+    text-align: center;
+}
+
+.main-page-small {
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(0,0,0,.8);
+    text-align: center;
+}
+
+.styles-detected-msg, #frames-msg {
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(0,0,0,.8);
+    display: none;
+    margin: 0px 0px 5px;
+    text-align: left;
+}
+
+.scan-btn {
+    width: 316px;
+    height: 45px;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    background-color: #1366E2;
+    border: none;
+    border-radius: 6px;
+
+    /* position: absolute;
+    bottom: 15;
+    left: 22.5; */
+
+    position: fixed;  /* Change this line */
+    bottom: 15px;     /* Change this line */
+    left: 22.5px;     /* Change this line */
+    z-index: 999;   
+}
+
+.scan-btn:hover {
+    background-color: #0E57C2;
+}
+
+/*----------ELEMENTS TO FIX----------*/
+
+.scrollable-container {
+    max-height: 440px; /* Adjust the height as needed */ /*change to just height??*/
+    overflow-y: auto;
+}
+
+.element-list {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+}
+
+.element {
+    border-radius: 8px;;
+    padding: 15px;
+    margin: 10px 0px;
+    position: relative;
+}
+
+.element:hover {
+    background-color: #F8F8F8;
+}
+
+.element:hover .suggested-text-style, .element:hover .suggested-paint-style {
+    color: #0E57C2;
+}
+
+.element:hover .element-name {
+    font-weight: 600;
+}
+
+.element-name {
+    font-weight: 400;
+    font-size: 12px;
+    margin-bottom: 8px;
+    margin-left: 20px;
+    color: rgba(0,0,0,.8);
+}
+
+.suggested-text-style, .suggested-paint-style {
+    font-weight: 600;
+    font-size: 12px;
+    margin-left: 20px;
+    color: rgba(0,0,0,.8);
+}
+
+.zoom-icon {
+    fill: #CECCCC;
+    transition: fill 0.1s;
+    position: absolute;
+    right: 5;
+    bottom: 15;
+}
+
+.zoom-icon:hover {
+    fill: rgba(0,0,0,.6);
+}
+
+.element-icon {
+    position: absolute;
+    width: 15px; 
+    height: 15px;
+    left: 10;
+    bottom: 52;
+    fill: rgba(0,0,0,.6);
+}
+
+
+/*----------GET CSS CONTENT----------*/
+
+#copy-css-container {
+    width: 100%;
+    background-color: rgba(0,0,0,.65);
+    border-radius: 8px 8px 0px 0px;
+    text-align: right;
+    padding: 5px 0px;
+}
+
+#copy-css-button {
+    color: rgba(255,255,255,.8);
+    background-color: rgba(0,0,0,0);
+    border: none;
+    padding: 3px;
+    margin-right: 10px;
+}
+
+#copy-icon {
+    vertical-align: middle; 
+    margin-left: 5px;
+    fill: rgba(255,255,255,.8);
+
+}
+
+#copy-css-button:hover, #copy-css-button:hover #copy-icon { 
+    cursor: pointer; 
+    color: rgba(255,255,255,.6);
+    fill: rgba(255,255,255,.6);
+}
+
+#css-textbox {
+    width: 100%;
+    height: 420px;
+    background-color: rgba(0,0,0,.8);
+    color: #fff;
+    border: 3px solid rgba(0,0,0,0);
+    resize: none;
+    border-radius: 0px 0px 8px 8px;
+}
+
+/*----------SUGESTIONS CONTENT----------*/
+.suggestions-list {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+    max-height: 440px;
+}
+
+.suggestion {
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px 0px;
+    position: relative;
+    background-color: #FFF9EC;
+}
+
+.suggestion .suggestion-name {
+    font-weight: 600;
+    font-size: 12px;
+    margin-bottom: 8px;
+    margin-left: 20px;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.suggestion .text-suggestion,
+.suggestion .paint-suggestion {
+    font-weight: 400;
+    font-size: 12px;
+    margin-left: 20px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.warn-icon {
+    fill: rgba(0,0,0,.6);
+    transition: fill 0.1s;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 10;
+    top: 13;
+}
+
+/*----------FRAMES LIST----------*/
+.frame-list {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+}
+
+.frame {
+    border-radius: 8px;;
+    padding: 15px;
+    margin: 10px 0px;
+    position: relative;
+    height: 15px;
+}
+
+.frame-name {
+    font-weight: 600;
+    font-size: 12px;
+    margin-bottom: 8px;
+    margin-left: 20px;
+    color: rgba(0,0,0,.8);
+}
+
+.frame:hover {
+    background-color: #F8F8F8;
+}
+
+.frame:hover .frame-name {
+    font-weight: 600;
+}
+
+.frame-icon {
+    position: absolute;
+    width: 15px; 
+    height: 15px;
+    left: 10;
+    bottom: 16;
+    fill: rgba(0,0,0,.6);
+}
+
+.back-button {
+    display: none;
+    flex-direction: row;
+    justify-content: middle;
+    font-size: 14px;
+    color: rgba(0,0,0,.6);
+    font-weight: 500;
+    background-color: transparent;;
+    border: none;
+    height: auto;
+    width: auto;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+
+.back-button:hover {
+    color: rgba(0,0,0,.8);
+}
+
+.back-button:hover .backBtn-svg {
+    fill: rgba(0, 0, 0, 0.8);
+}
+
+.backBtn-svg {
+    width: 18px; 
+    height: 18px;
+    fill: rgba(0,0,0,.6);
+    margin-right: 5px;
+    margin-bottom: 0;
+}
+
+
+.back-button p {
+    justify-content: middle;
+    margin-top: 4px;
+    margin-bottom: 0;
+}
